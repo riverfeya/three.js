@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<base href="../../../" />
+		<script src="list.js"></script>
+		<script src="page.js"></script>
+		<link type="text/css" rel="stylesheet" href="page.css" />
+	</head>
+	<body>
+		<h1>Список устаревших API</h1>
+
+		<p>
+			Поскольку Three.js имеет быстро развивающийся интерфейс, вы можете встретить примеры, которые предлагают использовать элементы API, которые больше не являются частью ядра.<br /><br />
+
+			Ниже приведен список таких элементов, а также информация об их заменах..
+		</p>
+
+
+
+
+
+
+
+
+
+
+		<h2>Audio</h2>
+
+		<h3>[page:Audio]</h3>
+		<p>Audio.load устарел. Используйте [page:AudioLoader] instead.</p>
+
+		<h3>[page:AudioAnalyser]</h3>
+		<p>AudioAnalyser.getData() был переименован в [page:AudioAnalyser.getFrequencyData]().</p>
+
+		<h3>[page:BinaryTextureLoader]</h3>
+		<p>BinaryTextureLoader был переименован в [page:DataTextureLoader].</p>
+
+
+
+
+
+
+
+
+
+
+
+		<h2>Buffers</h2>
+
+		<h3>[page:BufferAttribute]</h3>
+		<p>BufferAttribute.length был переименован в [page:BufferAttribute.count].</p>
+		<p>BufferAttribute.copyIndicesArray() был удален.</p>
+
+
+		<h3>[page:DynamicBufferAttribute]</h3>
+		<p>DynamicBufferAttribute был удален. Используйте [page:BufferAttribute.setDynamic]( true ) instead.</p>
+
+		<h3>[page:Int8Attribute]</h3>
+		<p>Int8Attribute был удален. Используйте [page:BufferAttributeTypes Int8BufferAttribute] instead.</p>
+
+		<h3>[page:Uint8Attribute]</h3>
+		<p>Uint8Attribute был удален. Используйте [page:BufferAttributeTypes Uint8BufferAttribute] instead.</p>
+
+		<h3>[page:Uint8ClampedAttribute]</h3>
+		<p>Uint8ClampedAttribute был удален. Используйте [page:BufferAttributeTypes Uint8ClampedBufferAttribute] instead.</p>
+
+		<h3>[page:Int16Attribute]</h3>
+		<p>Int16Attribute был удален. Используйте [page:BufferAttributeTypes Int16BufferAttribute] instead.</p>
+
+		<h3>[page:Uint16Attribute]</h3>
+		<p>Uint16Attribute был удален. Используйте [page:BufferAttributeTypes Uint16BufferAttribute] instead.</p>
+
+		<h3>[page:Int32Attribute]</h3>
+		<p>Int32Attribute был удален. Используйте [page:BufferAttributeTypes Int32BufferAttribute] instead.</p>
+
+		<h3>[page:Uint32Attribute]</h3>
+		<p>Uint32Attribute был удален. Используйте [page:BufferAttributeTypes Uint32BufferAttribute] instead.</p>
+
+		<h3>[page:Float32Attribute]</h3>
+		<p>Float32Attribute был удален. Используйте [page:BufferAttributeTypes Float32BufferAttribute] instead.</p>
+
+		<h3>[page:Float64Attribute]</h3>
+		<p>Float64Attribute был удален. Используйте [page:BufferAttributeTypes Float64BufferAttribute] instead.</p>
+
+
+
+
+
+
+
+		<h2>Cameras</h2>
+
+		<h3>[page:PerspectiveCamera]</h3>
+		<p>
+		PerspectiveCamera.setLens() устарел. Используйте [page:PerspectiveCamera.setFocalLength]()
+		 и [page:PerspectiveCamera.filmGauge]() для фотографической установки.
+		</p>
+
+
+
+
+
+
+
+		<h2>Константы</h2>
+
+		<h3>[page:LineStrip]</h3>
+
+		<h3>[page:LinePieces]</h3>
+		<p>
+		LinePieces режим больше не поддерживается для [page:Line]s. Вместо этого создайте [page:LineSegments].
+		</p>
+
+
+
+
+
+		<h2>Core</h2>
+
+		<h3>[page:EventDispatcher]</h3>
+		<p>EventDispatcher.apply был удален. Inherit or Object.assign the prototype to mix-in instead.</p>
+
+		<h3>[page:Raycaster]</h3>
+		<p>Raycaster.params.PointCloud был переименован в [page:Raycaster.params.Points].</p>
+
+
+		<h3>[page:Uniform]</h3>
+		<p>
+			Uniform.dynamic был удален. Используйте object.onBeforeRender() instead.<br /><br />
+
+			Uniform.onUpdate был удален. Используйте object.onBeforeRender() instead.
+		</p>
+
+
+
+
+
+
+		<h2>Extras</h2>
+
+		<h3>[page:ClosedSplineCurve3]</h3>
+		<p>ClosedSplineCurve3 устарел. Используйте [page:CatmullRomCurve3] instead.</p>
+
+		<h3>[page:SplineCurve3]</h3>
+		<p>SplineCurve3 устарел. Используйте [page:CatmullRomCurve3] instead.</p>
+
+
+
+
+
+
+
+		<h2>Geometry</h2>
+
+		<p>
+			Geometry.computeTangents() был удален.<br /><br />
+
+			Geometry.computeLineDistances() был удален. Используйте [page:Line.computeLineDistances] instead.<br /><br />
+		</p>
+
+		<h3>[page:BufferGeometry]</h3>
+		<p>
+			BufferGeometry.addIndex был переименован в [page:BufferGeometry.setIndex].<br /><br />
+
+			BufferGeometry.addDrawCall is now [page:BufferGeometry.addGroup].<br /><br />
+
+			BufferGeometry.clearDrawCalls is now [page:BufferGeometry.clearGroups].<br /><br />
+
+			BufferGeometry.computeTangents был удален.<br /><br />
+
+			BufferGeometry.computeOffsets был удален.<br /><br />
+
+			BufferGeometry.drawcalls был переименован в [page:BufferGeometry.groups].<br /><br />
+
+			BufferGeometry.offsets был переименован в [page:BufferGeometry.groups].<br /><br />
+
+		</p>
+
+		<h3>[page:CubeGeometry]</h3>
+		<p>CubeGeometry был переименован в [page:BoxGeometry].</p>
+
+		<h3>[page:Geometry]</h3>
+		<p>Geometry.computeTangents() был удален.</p>
+
+		<h3>[page:GeometryUtils]</h3>
+		<p>
+			GeometryUtils.merge has been moved to [page:Geometry]. Use [page:Geometry.merge]( geometry2, matrix, materialIndexOffset ) instead.<br /><br />
+
+			GeometryUtils.center has been moved to [page:Geometry]. Use [page:Geometry.center]( ) instead.
+		</p>
+
+		<h3>[page:Plane]</h3>
+		<p>
+			Plane.isIntersectionLine() был переименован в	[page:Plane.intersectsLine]().
+		</p>
+
+
+
+
+
+
+
+
+		<h2>Helpers</h2>
+
+		<h3>[page:BoundingBoxHelper]</h3>
+		<p>BoundingBoxHelper устарел. Используйте [page:BoxHelper] instead.</p>
+
+		<h3>[page:EdgesHelper]</h3>
+		<p>EdgesHelper был удален. Используйте [page:EdgesGeometry] instead.</p>
+
+		<h3>[page:GridHelper]</h3>
+		<p>GridHelper.setColors() has been deprecated, pass them in the constructor instead.</p>
+
+		<h3>[page:WireframeHelper WireframeHelper]</h3>
+		<p>WireframeHelper был удален. Используйте [page:WireframeGeometry] instead.</p>
+
+
+
+
+		<h2>Lights</h2>
+
+		<h3>[page:Light]</h3>
+		<p>
+			Light.onlyShadow был удален.<br /><br />
+
+			Light.shadowCameraLeft is now [page:Light.shadow.camera.left].<br /><br />
+
+			Light.shadowCameraRight is now [page:Light.shadow.camera.right].<br /><br />
+
+			Light.shadowCameraTop is now [page:Light.shadow.camera.top].<br /><br />
+
+			Light.shadowCameraBottom is now [page:Light.shadow.camera.bottom].<br /><br />
+
+			Light.shadowCameraNear is now [page:Light.shadow.camera.near].<br /><br />
+
+			Light.shadowCameraFar is now [page:Light.shadow.camera.far].<br /><br />
+
+			Light.shadowCameraVisible был удален. Используйте [page:CameraHelper] ( light.shadow.camera ) instead.<br /><br />
+
+			Light.shadowMapWidth is now [page:Light.shadow.mapSize.width].<br /><br />
+
+			Light.shadowMapHeight is now [page:Light.shadow.mapSize.height].
+		</p>
+
+		<h2>Loaders</h2>
+
+		<h3>[page:XHRLoader]</h3>
+		<p>XHRLoader был переименован в [page:FileLoader].</p>
+
+		<h3>[page:JSONLoader]</h3>
+		<p>JSONLoader был удален from core.</p>
+
+		<h2>Maths</h2>
+
+		<h3>[page:Box2]</h3>
+		<p>
+			Box2.center был переименован в [page:Box2.getCenter]().<br /><br />
+
+			Box2.empty был переименован в [page:Box2.isEmpty]().<br /><br />
+
+			Box2.isIntersectionBox был переименован в [page:Box2.intersectsBox]().<br /><br />
+
+			Box2.size был переименован в [page:Box2.getSize]().
+
+		</p>
+
+		<h3>[page:Box3]</h3>
+		<p>
+			Box3.center был переименован в [page:Box3.getCenter]().<br /><br />
+
+			Box3.empty был переименован в [page:Box3.isEmpty]().<br /><br />
+
+			Box3.isIntersectionBox был переименован в [page:Box3.intersectsBox]().<br /><br />
+
+			Box3.isIntersectionSphere был переименован в [page:Box3.intersectsSphere]().<br /><br />
+
+			Box3.size был переименован в [page:Box3.getSize]().
+		</p>
+
+		<h3>[page:Face4]</h3>
+		<p>Face4 был удален. Используйте [page:Face3] instead.</p>
+
+		<h3>[page:Line3]</h3>
+		<p>Line3.center был переименован в [page:Line3.getCenter]().</p>
+
+		<h3>[page:Math]</h3>
+		<p>
+			Math.random16() устарел. Используйте Math.random() instead.
+		</p>
+
+		<h3>[page:Matrix3]</h3>
+		<p>
+			Matrix3.flattenToArrayOffset устарел. Используйте [page:Matrix3.toArray]() instead.<br /><br />
+
+			Matrix3.multiplyVector3 был удален. Используйте vector.applyMatrix3( matrix ) instead.<br /><br />
+
+			Matrix3.multiplyVector3Array был переименован в [page:Matrix3.applyToVector3Array]( array ).<br /><br />
+
+			Matrix3.applyToBuffer был удален. Используйте matrix.applyToBufferAttribute( attribute ) instead.<br /><br />
+
+			Matrix3.applyToVector3Array был удален.
+		<p>
+
+		<h3>[page:Matrix4]</h3>
+		<p>
+			Matrix4.flattenToArrayOffset() устарел. Используйте [page:Matrix4.toArray]() instead.<br /><br />
+
+			Matrix4.extractPosition() был переименован в [page:Matrix4.copyPosition]( matrix ).<br /><br />
+
+			Matrix4.getPosition() был удален. Используйте [page:Vector3.setFromMatrixPosition]( matrix ) instead.<br /><br />
+
+			Matrix4.setRotationFromQuaternion() был переименован в [page:Matrix4.makeRotationFromQuaternion]( quaternion ).<br /><br />
+
+			Matrix4.multiplyVector3() был удален. Используйте vector.applyMatrix4( matrix ) instead.<br /><br />
+
+			Matrix4.multiplyVector4() был удален. Используйте vector.applyMatrix4( matrix ) instead.<br /><br />
+
+			Matrix4.multiplyVector3Array() был переименован в [page:Matrix4.applyToVector3Array] ( array ).<br /><br />
+
+			Matrix4.rotateAxis() был удален. Используйте [page:Matrix4.transformDirection]( matrix ) instead.<br /><br />
+
+			Matrix4.crossVector() был удален. Используйте vector.applyMatrix4( matrix ) instead.<br /><br />
+
+			Matrix4.rotateX() был удален.<br /><br />
+
+			Matrix4.rotateY() был удален.<br /><br />
+
+			Matrix4.rotateZ() был удален.<br /><br />
+
+			Matrix4.rotateByAxis() был удален.<br /><br />
+
+			Matrix4.applyToBuffer() был удален. Используйте matrix.applyToBufferAttribute() instead.<br /><br />
+
+			Matrix4.applyToVector3Array() был удален.<br /><br />
+
+			Matrix4.makeFrustum() был удален. Используйте [page:Matrix4.makePerspective]( left, right, top, bottom, near, far ) instead.
+		</p>
+
+
+		<h3>[page:Quaternion.multiplyVector3]</h3>
+		<p>Quaternion.multiplyVector3() был удален. Используйте vector.applyQuaternion( quaternion ) instead.</p>
+
+		<h3>[page:Ray]</h3>
+		<p>
+			Ray.isIntersectionBox() был переименован в [page:Ray.intersectsBox]().<br /><br />
+
+			Ray.isIntersectionPlane был переименован в [page:Ray.intersectsPlane].<br /><br />
+
+			Ray.isIntersectionSphere был переименован в [page:Ray.intersectsSphere].
+		</p>
+
+		<h3>[page:Triangle]</h3>
+		<p>
+			Triangle.area() был переименован в [page:Triangle.getArea]().<br /><br />
+			Triangle.barycoordFromPoint() был переименован в [page:Triangle.getBarycoord]().<br /><br />
+			Triangle.midpoint() был переименован в [page:Triangle.getMidpoint]().<br /><br />
+			Triangle.normal() был переименован в [page:Triangle.getNormal]().<br /><br />
+			Triangle.plane() был переименован в [page:Triangle.getPlane]().
+		</p>
+
+		<h3>[page:Vector2]</h3>
+		<p>
+			Vector2.fromAttribute() был переименован в [page:Vector2.fromBufferAttribute]().
+		</p>
+
+		<h3>[page:Vector3]</h3>
+		<p>
+			Vector3.setEulerFromRotationMatrix() был удален. Используйте [page:Euler.setFromRotationMatrix]() instead.<br /><br />
+
+			Vector3.setEulerFromQuaternion() был удален. Используйте [page:Euler.setFromQuaternion]() instead.<br /><br />
+
+			Vector3.getPositionFromMatrix() был переименован в [page:Vector3.setFromMatrixPosition]().<br /><br />
+
+			Vector3.getScaleFromMatrix() был переименован в [page:Vector3.setFromMatrixScale]().<br /><br />
+
+			Vector3.getColumnFromMatrix() был переименован в [page:Vector3.setFromMatrixColumn]().<br /><br />
+
+			Vector3.applyProjection() был удален. Используйте [page:Vector3.applyMatrix4]() instead.<br /><br />
+
+			Vector3.fromAttribute() был переименован в [page:Vector3.fromBufferAttribute]().
+		</p>
+
+		<h3>[page:Vector4]</h3>
+		<p>
+			Vector4.fromAttribute() был переименован в [page:Vector4.fromBufferAttribute]().
+		</p>
+
+		<h3>[page:Vertex]</h3>
+		<p>Vertex был удален. Используйте [page:Vector3] instead.</p>
+
+		<h3>[page:Spline]</h3>
+		<p>Spline был удален. Используйте [page:CatmullRomCurve3] instead.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+		<h2>Materials</h2>
+
+		<h3>[page:Material]</h3>
+		<p>
+			Material.wrapAround был удален.<br /><br />
+
+			Material.wrapRGB был удален.
+
+		</p>
+
+		<h3>[page:MeshFaceMaterial]</h3>
+		<p>MeshFaceMaterial был удален. Используйте an array of materials instead.</p>
+
+		<h3>[page:MultiMaterial]</h3>
+		<p>MultiMaterial был удален. Используйте an array of materials instead.</p>
+
+		<h3>[page:MeshPhongMaterial]</h3>
+		<p>MeshPhongMaterial.metal был удален. Используйте [page:MeshStandardMaterial] instead.</p>
+
+		<h3>[page:ParticleBasicMaterial]</h3>
+		<p>ParticleBasicMaterial был переименован в [page:PointsMaterial].</p>
+
+		<h3>[page:ParticleSystemMaterial]</h3>
+		<p>ParticleBasicMaterial был переименован в [page:PointsMaterial].</p>
+
+		<h3>[page:PointCloudMaterial]</h3>
+		<p>PointCloudMaterial был переименован в [page:PointsMaterial].</p>
+
+		<h3>[page:ShaderMaterial.derivatives]</h3>
+		<p>ShaderMaterial.derivatives has been moved to [page:ShaderMaterial.extensions.derivatives].</p>
+
+
+
+
+
+
+
+
+		<h2>Objects</h2>
+
+		<h3>[page:LOD.objects]</h3>
+		<p>LOD.objects был переименован в [page:LOD.levels].</p>
+
+		<h3>[page:Object3D]</h3>
+		<p>
+			Object3D.eulerOrder is now [page:Object3D.rotation.order].<br /><br />
+
+			Object3D.getChildByName() был переименован в [page:Object3D.getObjectByName]().<br /><br />
+
+			Object3D.renderDepth был удален. Используйте [page:Object3D.renderOrder] instead.<br /><br />
+
+			Object3D.translate() был удален. Используйте [page:Object3D.translateOnAxis]( axis, distance ) instead.<br /><br />
+
+			Object3D.useQuaternion был удален. The library now uses quaternions by default.
+		</p>
+
+		<h3>[page:LensFlare]</h3>
+		<p>
+			LensFlare has been moved to [link:https://github.com/mrdoob/three.js/blob/master/examples/js/objects/Lensflare.js /examples/js/objects/Lensflare.js].
+		</p>
+
+
+		<h3>[page:Particle]</h3>
+		<p>Particle был переименован в [page:Sprite].</p>
+
+		<h3>[page:ParticleSystem]</h3>
+		<p>ParticleSystem был переименован в [page:Points].</p>
+
+		<h3>[page:PointCloud]</h3>
+		<p>PointCloud был переименован в [page:Points].</p>
+
+		<h3>[page:Shape]</h3>
+		<p>
+			Shape.extrude был удален. Используйте [page:ExtrudeGeometry] instead.<br /><br />
+
+			Shape.makeGeometry был удален. Используйте [page:ShapeGeometry] instead.
+		</p>
+
+		<h3>[page:SkinnedMesh]</h3>
+		<p>
+			SkinnedMesh.initBones() был удален.
+		</p>
+
+
+		<h2>Renderers</h2>
+
+		<h3>[page:CanvasRenderer]</h3>
+		<p>
+			CanvasRenderer был удален.
+		</p>
+
+		<h3>[page:Projector]</h3>
+		<p>
+			Projector has been moved to
+			[link:https://github.com/mrdoob/three.js/blob/master/examples/js/renderers/Projector.js 	/examples/js/renderers/Projector.js].<br /><br />
+
+			Projector.projectVector() is now [page:Vector.project]().<br /><br />
+
+			Projector.unprojectVector() is now [page:Vector.unproject]().<br /><br />
+
+			Projector:.pickingRay() is now [page:Raycaster.setFromCamera]().
+		</p>
+
+		<h3>[page:WebGLProgram]</h3>
+		<p>
+			WebGLProgram.uniforms is now [page:WebGLProgram.getUniforms]().<br /><br />
+
+			WebGLProgram.attributes is now [page:WebGLProgram.getAttributes]().
+		</p>
+
+		<h3>[page:WebGLRenderer]</h3>
+		<p>
+			WebGLRenderer.supportsFloatTextures() is now [page:WebGLRenderer.extensions.get]( 'OES_texture_float' ).<br /><br />
+
+			WebGLRenderer.supportsHalfFloatTextures() is now [page:WebGLRenderer.extensions.get]( 'OES_texture_half_float' ).<br /><br />
+
+			WebGLRenderer.supportsStandardDerivatives() is now [page:WebGLRenderer.extensions.get]( 'OES_standard_derivatives' ).<br /><br />
+
+			WebGLRenderer.supportsCompressedTextureS3TC() is now [page:WebGLRenderer.extensions.get]( 'WEBGL_compressed_texture_s3tc' ).<br /><br />
+
+			WebGLRenderer.supportsCompressedTexturePVRTC() is now [page:WebGLRenderer.extensions.get]( 'WEBGL_compressed_texture_pvrtc' ).<br /><br />
+
+			WebGLRenderer.supportsBlendMinMax() is now [page:WebGLRenderer.extensions.get]( 'EXT_blend_minmax' ).<br /><br />
+
+			WebGLRenderer.supportsVertexTextures() is now [page:WebGLRenderer.capabilities.vertexTextures].<br /><br />
+
+			WebGLRenderer.supportsInstancedArrays() is now [page:WebGLRenderer.extensions.get]( 'ANGLE_instanced_arrays' ).<br /><br />
+
+			WebGLRenderer.enableScissorTest() is now [page:WebGLRenderer.setScissorTest]().<br /><br />
+
+			WebGLRenderer.initMaterial() был удален.<br /><br />
+
+			WebGLRenderer.addPrePlugin() был удален.<br /><br />
+
+			WebGLRenderer.addPostPlugin() был удален.<br /><br />
+
+			WebGLRenderer.updateShadowMap() был удален.<br /><br />
+
+			WebGLRenderer.setFaceCulling() был удален.<br /><br />
+
+			WebGLRenderer.setTexture is deprecated, use [page:WebGLRenderer.setTexture2D]() instead.<br /><br />
+
+			WebGLRenderer.shadowMapEnabled is now [page:WebGLRenderer.shadowMap.enabled].<br /><br />
+
+			WebGLRenderer.shadowMapType is now [page:WebGLRenderer.shadowMap.type].<br /><br />
+
+			WebGLRenderer.shadowMapCullFace был удален. Set [page:Material.shadowSide] instead.<br /><br />
+
+			WebGLRenderer.shadowMap.cullFace был удален. Set [page:Material.shadowSide] instead.<br /><br />
+
+			WebGLRenderer.shadowMap.renderReverseSided был удален. Set [page:Material.shadowSide] instead.<br /><br />
+
+			WebGLRenderer.shadowMap.renderSingleSided был удален. Set [page:Material.shadowSide] instead.
+
+		</p>
+
+		<h3>[page:WebGLRenderTarget]</h3>
+		<p>
+			WebGLRenderTarget.wrapS is now [page:WebGLRenderTarget.texture.wrapS].<br /><br />
+
+			WebGLRenderTarget.wrapT is now [page:WebGLRenderTarget.texture.wrapT].<br /><br />
+
+			WebGLRenderTarget.magFilter is now [page:WebGLRenderTarget.texture.magFilter].<br /><br />
+
+			WebGLRenderTarget.minFilter is now [page:WebGLRenderTarget.texture.minFilter].<br /><br />
+
+			WebGLRenderTarget.anisotropy is now [page:WebGLRenderTarget.texture.anisotropy].<br /><br />
+
+			WebGLRenderTarget.offset is now [page:WebGLRenderTarget.texture.offset].<br /><br />
+
+			WebGLRenderTarget.repeat is now [page:WebGLRenderTarget.texture.repeat].<br /><br />
+
+			WebGLRenderTarget.format is now [page:WebGLRenderTarget.texture.format].<br /><br />
+
+			WebGLRenderTarget.type is now [page:WebGLRenderTarget.texture.type].<br /><br />
+
+			WebGLRenderTarget.generateMipmaps is now [page:WebGLRenderTarget.texture.generateMipmaps].
+		</p>
+
+
+		<h2>Textures</h2>
+
+		<h3>[page:ImageUtils]</h3>
+		<p>
+			ImageUtils.loadTexture устарел. Используйте [page:TextureLoader] instead.<br /><br />
+
+			ImageUtils.loadTextureCube устарел. Используйте [page:CubeTextureLoader] instead.<br /><br />
+
+			ImageUtils.loadCompressedTexture был удален. Используйте [page:DDSLoader] instead.<br /><br />
+
+			ImageUtils.loadCompressedTextureCube был удален. Используйте [page:DDSLoader] instead.
+		</p>
+
+
+		<h2>Source</h2>
+
+		<p>
+			[link:https://github.com/mrdoob/three.js/blob/master/src/Three.Legacy.js src/Three.Legacy.js]
+		</p>
+
+		</body>
+</html>
