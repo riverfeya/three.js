@@ -13,8 +13,8 @@
 		<h1>[name]</h1>
 
 		<p class="desc">
-		Defines an arbitrary 2d shape plane using paths with optional holes. It can be used with [page:ExtrudeGeometry],
-		[page:ShapeGeometry], to get points, or to get triangulated faces.
+		Определяет произвольную плоскость 2D-формы, используя пути с необязательными отверстиями. Может использоваться с [page:ExtrudeGeometry],
+		[page:ShapeGeometry], чтобы получить точки, или получить триангулированные грани.
 		</p>
 
 		<code>
@@ -35,7 +35,7 @@
 		var mesh = new THREE.Mesh( geometry, new THREE.MeshPhongMaterial() );
 		</code>
 
-		<h2>Examples</h2>
+		<h2>Примеры</h2>
 
 		<p>
 		[example:webgl_geometry_shapes geometry / shapes ]<br/>
@@ -51,16 +51,14 @@
 		<p>
 		points -- (optional) array of [page:Vector2 Vector2s].<br /><br />
 
-		Creates a Shape from the points. The first point defines the offset, then successive points
-		are added to the [page:CurvePath.curves curves] array as [page:LineCurve LineCurves].<br /><br />
+		Создает форму из точек. Первая точка определяет смещение, затем последовательные точки добавляются к [page:CurvePath.curves curves] массиву как [page:LineCurve LineCurves].<br /><br />
 
-		If no points are specified, an empty shape is created and the [page:.currentPoint] is set to
-		the origin.
+		Если точки не указаны, создается пустая фигура и [page:.currentPoint] установлен на origin.
 		</p>
 
 
 		<h2>Properties</h2>
-		<p>See the base [page:Path] class for common properties.</p>
+		<p>Смотри базовый класс [page:Path] для общих свойств.</p>
 
 		<h3>[property:String uuid]</h3>
 		<p>
@@ -68,30 +66,30 @@
 		</p>
 
 		<h3>[property:array holes]</h3>
-		<p>An array of [page:Path paths] that define the holes in the shape.</p>
+		<p>Массив [page:Path paths] которые определяют отверстия в форме.</p>
 
-		<h2>Methods</h2>
-		<p>See the base [page:Path] class for common methods.</p>
+		<h2>методы</h2>
+		<p>Смотри базовый класс [page:Path] для общих методов.</p>
 
 		<h3>[method:Array extractPoints]( [param:Integer divisions] )</h3>
 		<p>
-		divisions -- The fineness of the result.<br /><br />
+		divisions -- Тонкость результата.<br /><br />
 
-		Call [page:Curve.getPoints getPoints] on the shape and the [page:.holes] array, and return an object of the form:
+		Вызов [page:Curve.getPoints getPoints] в shape и [page:.holes] массив, и вернуть объект в форме:
 		<code>
 {
 	shape
 	holes
 }
 		</code>
-		where shape and holes are arrays of [page:Vector2 Vector2s].
+		Где shape и holes это массивы [page:Vector2 Vector2s].
 		</p>
 
 		<h3>[method:Array getPointsHoles]( [param:Integer divisions] )</h3>
 		<p>
-		divisions -- The fineness of the result.<br /><br />
+		divisions -- Тонкость результата.<br /><br />
 
-		Get an array of [page:Vector2 Vector2s] that represent the holes in the shape.
+		Получить массив [page:Vector2 Vector2s] которые представляют собой отверстия в форме.
 		</p>
 
 		<h2>Source</h2>

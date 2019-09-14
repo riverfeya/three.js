@@ -10,12 +10,12 @@
 	<body>
 		<h1>[name]</h1>
 
-		<p class="desc">Uniforms are global [link:https://www.opengl.org/documentation/glsl/ GLSL] variables. They are passed to shader programs.
+		<p class="desc">Uniforms это глобальные [link:https://www.opengl.org/documentation/glsl/ GLSL] переменные. Они передаются в шейдерные программы.
 		</p>
 
-		<h3>Example</h3>
+		<h3>пример</h3>
 		<p>
-		When declaring a uniform of a [page:ShaderMaterial], it is declared by value or by object.
+		При объявлении Uniform [page:ShaderMaterial], он объявлен значением или объектом.
 		</p>
 		<code>
 		uniforms: {
@@ -24,24 +24,24 @@
 		}
 		</code>
 
-		<h3>Uniform types</h3>
+		<h3>Типы Uniform</h3>
 
 		<p>
-		Each uniform must have a *value* property. The type of the value must correspond to the
-		type of the uniform variable in the GLSL code as specified for the primitive GLSL types
-		in the table below. Uniform structures and arrays are also supported. GLSL arrays of primitive
-		type must either be specified as an array of the corresponding THREE objects or as a flat
-		array containing the data of all the objects. In other words; GLSL primitives in arrays
-		must not be represented by arrays. This rule does not apply transitively.
-		An array of *vec2* arrays, each with a length of five vectors, must be an array of arrays,
-		of either five [page:Vector2] objects or ten *number*s.
+		Каждая форма должна иметь *value* свойство. Тип value должен соответствовать типу uniform variable в коде
+		GLSL как указано в спецификации примитивных GLSL типов в таблице ниже. 
+		Uniform структуры и массивы также поддерживаются. 
+		GLSL массивы примитивных типов либо должен быть указан как массив соответствующих объектов THREE или как flat
+		array содержащий данные всех объектов. Другими словами; GLSL примитивы в массивах не должен быть представлен массивами. 
+		Это правило не применяется транзитивно.
+		Массив *vec2* массивов, каждый длиной пять векторов, должен быть массивом массивов
+		из пяти [page:Vector2] объектов или десяти *number*s.
 		</p>
 		<table>
-			<caption><a id="uniform-types">Uniform types</a></caption>
+			<caption><a id="uniform-types">Типы Uniform</a></caption>
 			<thead>
 				<tr>
-					<th>GLSL type</th>
-					<th>JavaScript type</th>
+					<th>GLSL тип</th>
+					<th>JavaScript тип</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -179,31 +179,31 @@
 		</table>
 
 		<p>
-		(*) Same for an (innermost) array (dimension) of the same GLSL type, containing the components of all vectors or matrices in the array.
+		(*) Same for an (innermost) array (dimension) of the same GLSL type, containing the components of all vectors or matrices in the array.(То же самое для (самого внутреннего) массива (измерения) того же типа GLSL, содержащего компоненты всех векторов или матриц в массиве.)
 		</p>
 
-		<h2>Constructor</h2>
+		<h2>Конструктор</h2>
 
 		<h3>[name]( [param:Object value] )</h3>
 		<p>
-		value -- An object containing the value to set up the uniform. It's type must be one of the Uniform Types described above.
+		value -- Объект, содержащий значение для настройки uniform. Это тип должен быть одним из Uniform типов описанных выше.
 		</p>
 
-		<h2>Properties</h2>
+		<h2>Свойства</h2>
 
 		<h3>[property:Object value]</h3>
 		<p>
-		Current value of the uniform.
+		Текущее значение uniform.
 		</p>
 
-		<h2>Methods</h2>
+		<h2>методы</h2>
 
 		<h3>[method:Uniform clone]()</h3>
 		<p>
-		Returns a clone of this uniform.<br />
-		If the uniform's value property is an [page:Object] with a clone() method, this is used, otherwise the value is copied by assignment.
-		Array values are shared between cloned [page:Uniform]s.<br /><br />
-		See [example:webgldeferred_animation WebGL deferred animation] for an example of this method in use.
+		Возвращает клон этого uniform.<br />
+		Если свойство uniform имеет значение [page:Object] с методом clone(), это используется, в противном случае значение копируется по присваиванию.
+		Значения массива распределяются между клонированными [page:Uniform]s.<br /><br />
+		См. [example:webgldeferred_animation WebGL deferred animation] для примера использования этого метода.
 		</p>
 
 		<h2>Source</h2>

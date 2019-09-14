@@ -13,14 +13,13 @@
 		<h1>[name]</h1>
 
 		<p class="desc">
-			Helper object to graphically show the world-axis-aligned bounding box around an object. The actual bounding box is handled with [page:Box3], this is just a visual helper for debugging.
-			It can be automatically resized with the [page:BoxHelper.update] method when the object it's created from is transformed.
-			Note that the object must have a [page:Geometry] or [page:BufferGeometry] for this to work,
-			so it won't work with [page:Sprite Sprites].
+			Вспомогательный объект для графического отображения выровненного по мировой оси bounding box вокруг объекта. Фактический bounding box обрабатывается [page:Box3], а это всего лишь визуальный помощник для отладки.
+			Это может быть автоматически изменено с помощью [page:BoxHelper.update] метода когда объект, из которого он создан, трансформируется.
+			Обратите внимание, что объект должен иметь [page: Geometry] или [page: BufferGeometry], чтобы он работал, поэтому он не будет работать с [page: Sprite Sprites].
 		</p>
 
 
-		<h2>Example</h2>
+		<h2>пример</h2>
 
 		<div>[example:webgl_helpers WebGL / helpers]</div>
 		<div>[example:webgl_loader_nrrd WebGL / loader / nrrd]</div>
@@ -35,36 +34,35 @@
 		</code>
 
 
-		<h2>Constructor</h2>
+		<h2>Конструктор</h2>
 
 
 		<h3>[name]( [param:Object3D object], [param:Color color] )</h3>
 		<p>
-		[page:Object3D object]  -- (optional) the object3D to show the world-axis-aligned boundingbox.<br />
-		[page:Color color] --  (optional) hexadecimal value that defines the box's color. Default is 0xffff00.<br /><br />
+		[page:Object3D object]  -- (optional) объект3D, чтобы показать выровненный по мировой оси boundingbox.<br />
+		[page:Color color] --  (optional) шестнадцатеричное значение, определяющее цвет блока. По умолчанию это 0xffff00.<br /><br />
 
-		Creates a new wireframe box that bounds the passed object. Internally this uses [page:Box3.setFromObject]
-		to calculate the dimensions. Note that this includes any children.
+		Создает новый каркасный блок, который ограничивает переданный объект. Внутренне это использует [page:Box3.setFromObject]
+		рассчитать размеры. Обратите внимание, что это относится к любым детям.
 		</p>
 
-		<h2>Properties</h2>
-		<p>See the base [page:LineSegments] class for common properties.</p>
+		<h2>свойства</h2>
+		<p>См. базовый класс [page:LineSegments] для общих свойств.</p>
 
 
 		<h2>Methods</h2>
-		<p>See the base [page:LineSegments] class for common methods.</p>
+		<p>См. базовый класс [page:LineSegments] для общих методов.</p>
 
 		<h3>[method:null update]()</h3>
 		<p>
-			Updates the helper's geometry to match the dimensions
-			of the object, including any children. See [page:Box3.setFromObject].
+			Обновляет геометрию помощника в соответствии с размерами объекта, включая любые дочерние элементы.. See [page:Box3.setFromObject].
 		</p>
 
 		<h3>[method:BoxHelper setFromObject]( [param:Object3D object] )</h3>
 		<p>
 			[page:Object3D object] - [page:Object3D] to create the helper of.<br /><br />
 
-			Updates the wireframe box for the passed object.
+			Обновляет окно каркаса для пропущенного объекта..
 		</p>
 
 		<h2>Source</h2>
