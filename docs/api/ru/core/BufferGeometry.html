@@ -11,22 +11,20 @@
 		<h1>[name]</h1>
 
 		<p>
-		An efficient representation of mesh, line, or point geometry. Includes vertex positions, face
-		indices, normals, colors, UVs, and custom attributes within buffers, reducing the cost of
-		passing all this data to the GPU.
+		Эффективное представление геометрии меша, линии или точки. Включает положения вершин, индексы граней, нормали, цвета, UV и пользовательские атрибуты в буферах, снижая стоимость передачи всех этих данных в графический процессор.
 		</p>
 		<p>
-		To read and edit data in BufferGeometry attributes, see [page:BufferAttribute] documentation.
+		Чтобы прочитать и изменить данные в атрибутах BufferGeometry, см.документацию [page:BufferAttribute] .
 		</p>
 		<p>
-		For a less efficient but easier-to-use representation of geometry, see [page:Geometry].
+		Для менее эффективного, но более простого в использовании представления геометрии см. [page:Geometry].
 		</p>
 
 		<h2>Example</h2>
 		<code>
 		var geometry = new THREE.BufferGeometry();
-		// create a simple square shape. We duplicate the top left and bottom right
-		// vertices because each vertex needs to appear once per triangle.
+		// создать простую квадратную форму. Дублируем верхний левый и правый нижний
+		// вершины, потому что каждая вершина должна появляться один раз на треугольник.
 		var vertices = new Float32Array( [
 			-1.0, -1.0,  1.0,
 			 1.0, -1.0,  1.0,
@@ -37,7 +35,7 @@
 			-1.0, -1.0,  1.0
 		] );
 
-		// itemSize = 3 because there are 3 values (components) per vertex
+		// itemSize = 3 потому что есть 3 значения (компоненты) на вершину
 		geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
 		var material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
 		var mesh = new THREE.Mesh( geometry, material );
@@ -64,26 +62,25 @@
 
 		<h3>[property:Object attributes]</h3>
 		<p>
-		This hashmap has as id the name of the attribute to be set and as value the [page:BufferAttribute buffer] to set it to.
+		Эта хэш-карта имеет в качестве идентификатора имя атрибута, который должен быть установлен, и в качестве значения [page:BufferAttribute buffer] чтобы установить его тоже.
 		Rather than accessing this property directly, use [page:.addAttribute] and [page:.getAttribute] to access attributes of this geometry.
 		</p>
 
 		<h3>[property:Box3 boundingBox]</h3>
 		<p>
-			Bounding box for the bufferGeometry, which can be calculated with
+			Bounding box для bufferGeometry, который может быть рассчитан с
 			[page:.computeBoundingBox](). Default is *null*.
 		</p>
 
 		<h3>[property:Sphere boundingSphere]</h3>
 		<p>
-			Bounding sphere for the bufferGeometry, which can be calculated with
+			Bounding sphere для bufferGeometry, который может быть рассчитан с
 			[page:.computeBoundingSphere](). Default is *null*.
 		</p>
 
 		<h3>[property:Object drawRange]</h3>
 		<p>
-			Determines the part of the geometry to render. This should not
-			be set directly, instead use [page:.setDrawRange]. Default is
+			Определяет часть геометрии для рендеринга. Это не должно быть установлено напрямую, вместо этого используйте [page:.setDrawRange]. Default is
 			<code>
 				{ start: 0, count: Infinity }
 			</code>

@@ -11,14 +11,14 @@
 		<h1>[name]</h1>
 
 		<p class="desc">
-			JavaScript events for custom objects.<br />
+			JavaScript события для пользовательских объектов.<br />
 			[link:https://github.com/mrdoob/eventdispatcher.js Eventdispatcher on GitHub]
 		</p>
 
-		<h2>Example</h2>
+		<h2>Пример</h2>
 
 		<code>
-// Adding events to a custom object
+// Добавление событий в пользовательский объект
 
 var Car = function () {
 
@@ -30,11 +30,11 @@ var Car = function () {
 
 };
 
-// Mixing the EventDispatcher.prototype with the custom object prototype
+// Смешиваем EventDispatcher.prototype с пользовательским объектомt prototype
 
 Object.assign( Car.prototype, EventDispatcher.prototype );
 
-// Using events with the custom object
+// Использование событий с пользовательским объектом
 
 var car = new Car();
 

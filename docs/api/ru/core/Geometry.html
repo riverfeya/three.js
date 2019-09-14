@@ -12,12 +12,10 @@
 
 		<div class="desc">
 		<p>
-		Geometry is a user-friendly alternative to [page:BufferGeometry]. Geometries store attributes
-		(vertex positions, faces, colors, etc.) using objects like [page:Vector3] or [page:Color] that
-		are easier to read and edit, but less efficient than typed arrays.
+		Geometry является удобной альтернативой [page:BufferGeometry]. В геометрии хранятся атрибуты (положения вершин, грани, цвета и т. Д.) С использованием таких объектов, как [page:Vector3] или [page:Color] которые легче читать и редактировать, но менее эффективный, чем типизированные массивы.
 		</p>
 		<p>
-		Prefer [page:BufferGeometry] for large or serious projects.
+		предпочитайте [page:BufferGeometry] для крупных или серьезных проектов.
 		</p>
 		</div>
 
@@ -52,70 +50,69 @@
 
 		<h3>[name]()</h3>
 		<p>
-		The constructor takes no arguments.
+		Конструктор не принимает аргументов.
 		</p>
 
 
-		<h2>Properties</h2>
+		<h2>свойства</h2>
 
 		<h3>[property:Box3 boundingBox]</h3>
 		<p>
-			Bounding box for the Geometry, which can be calculated with
-			[page:.computeBoundingBox](). Default is *null*.
+			Bounding box для Geometry, который может быть рассчитан с
+			[page:.computeBoundingBox](). По-умолчанию *null*.
 		</p>
 
 		<h3>[property:Sphere boundingSphere]</h3>
 		<p>
-			Bounding sphere for the Geometry, which can be calculated with
-			[page:.computeBoundingSphere](). Default is *null*.
+			Bounding sphere для Geometry, который может быть рассчитан с
+			[page:.computeBoundingSphere](). По-умолчанию *null*.
 		</p>
 
 		<h3>[property:Array colors]</h3>
 		<p>
-		Array of vertex [page:Color colors], matching number and order of vertices.<br /><br />
+		Массив вершины [page:Color colors], совпадающий номер и порядок вершин.<br /><br />
 
-		This is used by [page:Points] and [page:Line] and any classes derived from those such as [page:LineSegments] and various helpers.
-		[page:Mesh Meshes] use [page:Face3.vertexColors] instead of this.<br /><br />
+		Это используется [page:Points] и [page:Line] и любые классы, полученные из таких, как [page:LineSegments] и различные помощники.
+		[page:Mesh Meshes] использует вместо этого [page:Face3.vertexColors].<br /><br />
 
-		To signal an update in this array, [page:Geometry Geometry.colorsNeedUpdate] needs to be set to true.
+		Чтобы сообщить об обновлении в этом массиве, [page:Geometry Geometry.colorsNeedUpdate] установите в true.
 		</p>
 
 		<h3>[property:Array faces]</h3>
 		<p>
-		Array of [page:Face3 faces].<br />
-		The array of faces describe how each vertex in the model is connected to form faces.
-		Additionally it holds information about face and vertex normals and colors.<br /><br />
-		To signal an update in this array, [page:Geometry Geometry.elementsNeedUpdate] needs to be set to true.
+		Массив из [page:Face3 faces].<br />
+		Массив граней описывает, как каждая вершина в модели связана с гранями формы.
+		Кроме того, он содержит информацию о нормали и цветах грани и вершины..<br /><br />
+		Чтобы сообщить об обновлении в этом массиве, [page:Geometry Geometry.elementsNeedUpdate] установите в true.
 		</p>
 
 		<h3>[property:Array faceVertexUvs]</h3>
 		<p>
-		Array of face [link:https://en.wikipedia.org/wiki/UV_mapping UV] layers, used for mapping textures onto the geometry.<br />
-		Each UV layer is an array of [page:UV]s matching the order and number of vertices in faces.<br /><br />
-		To signal an update in this array, [page:Geometry Geometry.uvsNeedUpdate] needs to be set to true.
+		Массив слоев граней [link:https://en.wikipedia.org/wiki/UV_mapping UV] , используется для наложения текстур на геометрию.<br />
+		Каждый UV слой этомассив [page:UV]s соответствующий порядку иколичеству вершин в гранях.<br /><br />
+		Чтобы сообщить об обновлении в этом массиве, [page:Geometry Geometry.uvsNeedUpdate] установите в true.
 		</p>
 
 		<h3>[property:Integer id]</h3>
-		<p>Unique number for this geometry instance.</p>
+		<p>Уникальный id для этого экземпляра геометрии.</p>
 
 		<h3>[property:Boolean isGeometry]</h3>
 		<p>
-			Used to check whether this or derived classes are Geometries. Default is *true*.<br /><br />
+			Используется для проверки того, являются ли этот или производные классы - Geometries. По-умолчанию *true*.<br /><br />
 
-			You should not change this, as it used internally for optimisation.
+			Вы не должны менять это, так как он используется внутри для оптимизации.
 		</p>
 
 		<h3>[property:array lineDistances]</h3>
 		<p>
-		An array containing distances between vertices for Line geometries.
-		This is required for [page:LineDashedMaterial] to render correctly.
+		Массив, содержащий расстояния между вершинами для геометрических линий. Это требуется для[page:LineDashedMaterial] корректного рендеринга.
 		</p>
 
 		<h3>[property:Array morphTargets]</h3>
 		<p>
-		Array of [link:https://en.wikipedia.org/wiki/Morph_target_animation morph targets]. Each morph target is a Javascript object:
+		МАссив [link:https://en.wikipedia.org/wiki/Morph_target_animation morph targets]. Каждая morph target это объект Javascript:
 		<code>{ name: "targetName", vertices: [ new THREE.Vector3(), ... ] }</code>
-		Morph vertices match number and order of primary vertices.
+		Morph vertices соответствуют номеру и порядку первичных вершин.
 		</p>
 
 		<h3>[property:Array morphNormals]</h3>
@@ -125,45 +122,37 @@
 		</p>
 
 		<h3>[property:String name]</h3>
-		<p>Optional name for this geometry. Default is an empty string.</p>
+		<p>Опциональ ное имя этого geometry. По-умолчанию пустая string.</p>
 
 		<h3>[property:Array skinWeights]</h3>
 		<p>
-		When working with a [page:SkinnedMesh], each vertex can have up to 4 [page:Bone bones] affecting it.
-		The skinWeights property is an array of weight values that correspond to the order of the vertices in
-		the geometry. So for instance, the first skinWeight would correspond to the first vertex in the geometry.
-		Since each vertex can be modified by 4 bones, a [page:Vector4] is used to represent the skin weights
-		for that vertex.
+		При работе с [page:SkinnedMesh], каждая вершина может иметь до 4 [page:Bone bones] влияющих на неё.
+		Свойство skinWeights массив значений весов, которые соответствуют порядку вершин в geometry. Так, например, первый skinWeight будет соответствовать первой вершине в geometry.
+		Поскольку каждая вершина может принимать влияние от 4 костей, [page:Vector4] используется для представления веса кожи для этой вершины.
 		</p>
 		<p>
-		The values of the vector should typically be between 0 and 1. For instance when set to 0 the bone
-		transformation will have no affect. When set to 0.5 it will have 50% affect. When set to 100%, it will
-		have 100% affect. If there is only 1 bone associated with the vertex then you only need to worry about
-		the first component of the vector, the rest can be ignored and set to 0.
+		Значения вектора обычно должны быть между 0 и 1. Например, когда установлено значение 0, трансформация кости не будет оказывать никакого эффекта. При значении 0,5 это будет влиять на 50%. Когда установлено на 100%, это будет иметь 100% влияние. Если с вершиной связана только 1 кость, вам нужно беспокоиться только о первом компоненте вектора, остальное можно игнорировать и установить на 0.
 		</p>
 
 		<h3>[property:Array skinIndices]</h3>
 		<p>
-		Just like the skinWeights property, the skinIndices' values correspond to the geometry's vertices.
-		Each vertex can have up to 4 bones associated with it. So if you look at the first vertex, and the
-		first skinIndex, this will tell you the bones associated with that vertex. For example the first vertex
-		could have a value of <strong>( 10.05, 30.10, 12.12 )</strong>. Then the first skin index could have the
-		value of <strong>( 10, 2, 0, 0 )</strong>. The first skin weight could have the value of
-		<strong>( 0.8, 0.2, 0, 0 )</strong>. In affect this would take the first vertex, and then the bone
-		<strong>mesh.bones[10]</strong> and apply it 80% of the way. Then it would take the bone <strong>skeleton.bones[2]</strong>
-		and apply it 20% of the way. The next two values have a weight of 0, so they would have no affect.
+		Как и свойство skinWeights, значения skinIndices соответствуют вершинам геометрии.
+		С каждой вершиной может быть связано до 4 костей. Так что, если вы посмотрите на первую вершину и первый skinIndex, это скажет вам кости, связанные с этой вершиной. Например, первая вершина может иметь значение <strong>( 10.05, 30.10, 12.12 )</strong>. Тогда первый индекс кожи может иметь значение <strong>( 10, 2, 0, 0 )</strong>. Первый вес кожи может иметь значение
+		<strong>( 0.8, 0.2, 0, 0 )</strong>. В результате это займет первую вершину, а затем кость
+		<strong>mesh.bones[10]</strong> и применять его 80% пути. Тогда это займет кость <strong>skeleton.bones[2]</strong>
+		and apply it 20% of the way. Следующие два значения имеют вес 0, поэтому они не будут влиять.
 		</p>
 		<p>
-		In code another example could look like this:
+		В коде другой пример может выглядеть так:
 		<code>
 		// e.g.
 		geometry.skinIndices[15] = new THREE.Vector4(   0,   5,   9, 10 );
 		geometry.skinWeights[15] = new THREE.Vector4( 0.2, 0.5, 0.3,  0 );
 
-		// corresponds with the following vertex
+		// соответствует следующей вершине
 		geometry.vertices[15];
 
-		// these bones will be used like so:
+		// эти кости будут использованы так:
 		skeleton.bones[0]; // weight of 0.2
 		skeleton.bones[5]; // weight of 0.5
 		skeleton.bones[9]; // weight of 0.3
@@ -173,54 +162,54 @@
 
 		<h3>[property:String uuid]</h3>
 		<p>
-		[link:http://en.wikipedia.org/wiki/Universally_unique_identifier UUID] of this object instance.
-		This gets automatically assigned and shouldn't be edited.
+		[link:http://en.wikipedia.org/wiki/Universally_unique_identifier UUID]этого экземпляра объекта.
+		Это автоматически назначается и не должен редактироваться.
 		</p>
 
 		<h3>[property:Array vertices]</h3>
 		<p>
-		Array of [page:Vector3 vertices].<br />
-		The array of vertices holds the position of every vertex in the model.<br />
-		To signal an update in this array, [page:.verticesNeedUpdate] needs to be set to true.
+		Массив [page:Vector3 vertices].<br />
+		Массив вершин содержит положение каждой вершины в модели.<br />
+		Чтобы сообщить об обновлении в этом массиве, [page:.verticesNeedUpdate] установите в true.
 		</p>
 
 		<h3>[property:Boolean verticesNeedUpdate]</h3>
-		<p>Set to *true* if the vertices array has been updated.</p>
+		<p>Установите * true *, если vertices array был обновлен.</p>
 
 		<h3>[property:Boolean elementsNeedUpdate]</h3>
-		<p>Set to *true* if the faces array has been updated.</p>
+		<p>Установите * true *, если faces array был обновлен.</p>
 
 		<h3>[property:Boolean uvsNeedUpdate]</h3>
-		<p>Set to *true* if the uvs array has been updated.	</p>
+		<p>Установите * true *, если uvs array был обновлен.	</p>
 
 		<h3>[property:Boolean normalsNeedUpdate]</h3>
-		<p>Set to *true* if the normals array has been updated.</p>
+		<p>Установите * true *, если normals array был обновлен.</p>
 
 		<h3>[property:Boolean colorsNeedUpdate]</h3>
-		<p>Set to *true* if the colors array or a face3 color has been updated.</p>
+		<p>Установите * true *, если colors array или face3 color был обновлен.</p>
 
 		<h3>[property:Boolean groupsNeedUpdate]</h3>
-		<p>Set to *true* if a face3 materialIndex has been updated.</p>
+		<p>Set to *true* if a face3 materialIndex был обновлен.</p>
 
 		<h3>[property:Boolean lineDistancesNeedUpdate]</h3>
-		<p>Set to *true* if the linedistances array has been updated.</p>
+		<p>Установите * true *, если linedistances array был обновлен.</p>
 
 
-		<h2>Methods</h2>
+		<h2>Методы</h2>
 
-		<h3>[page:EventDispatcher EventDispatcher] methods are available on this class.</h3>
+		<h3>[page:EventDispatcher EventDispatcher] методы доступные в этом классе.</h3>
 
 		<h3>[method:null applyMatrix]( [param:Matrix4 matrix] )</h3>
-		<p>Bakes matrix transform directly into vertex coordinates.</p>
+		<p>запекает матрицы трансвормации непосредственно в координаты вершины.</p>
 
 		<h3>[method:Geometry center] ()</h3>
-		<p>Center the geometry based on the bounding box.</p>
+		<p>Центр геометрии на основе bounding box.</p>
 
 		<h3>[method:Geometry clone]()</h3>
 		<p>
-		Creates a new clone of the Geometry.<br /><br />
+		Создает новый клон Geometry.<br /><br />
 
-		This method copies only vertices, faces and uvs. It does not copy any other properties of the geometry.
+		Этот метод копирует только вершины, faces и uvs. Он не копирует какие-либо другие свойства geometry.
 		</p>
 
 		<h3>[method:null computeBoundingBox]()</h3>
@@ -230,112 +219,109 @@
 		<p>Computes bounding sphere of the geometry, updating [page:Geometry Geometry.boundingSphere] attribute.</p>
 
 		<p>
-			Neither bounding boxes or bounding spheres are computed by default. They need to be explicitly computed,
-			otherwise they are *null*.
+			Ни bounding boxes ни bounding spheres не вычисляются по умолчанию. Они должны быть явно вычислены, иначе они являются * нулевыми *.
 		</p>
 
 		<h3>[method:null computeFaceNormals]()</h3>
 		<p>Computes [page:Face3.normal face normals].</p>
 
 		<h3>[method:null computeFlatVertexNormals]()</h3>
-		<p>Computes flat [page:Face3.vertexNormals vertex normals]. Sets the vertex normal of each vertex of each face to be the same as the face's normal.</p>
+		<p>Вычисляет плоский [page:Face3.vertexNormals vertex normals]. Устанавливает нормаль вершины каждой вершины каждой грани так же, как нормаль грани.</p>
 
 		<h3>[method:null computeMorphNormals]()</h3>
 		<p>Computes [page:.morphNormals].</p>
 
 		<h3>[method:null computeVertexNormals]( [param:Boolean areaWeighted] )</h3>
 		<p>
-		areaWeighted - If true the contribution of each face normal to the vertex normal is
-		weighted by the area of the face. Default is true.<br /><br />
+		areaWeighted - если true вклад каждой грани нормали к нормали вершины взвешивается по площади грани. По-умолчанию true.<br /><br />
 
-		Computes vertex normals by averaging face normals.
+		Вычисляет нормали вершин путем усреднения нормалей граней.
 		</p>
 
 		<h3>[method:Geometry copy]( [param:Geometry geometry] )</h3>
 		<p>
-			Copies vertices, faces and uvs into this geometry. It does not copy any other properties of the geometry.
+			Копирует вершины, грани и UV в этот geometry. Он не копирует какие-либо другие свойства geometry.
 		</p>
 
 		<h3>[method:null dispose]()</h3>
 		<p>
-		Removes The object from memory. <br />
-		Don't forget to call this method when you remove a geometry because it can cause memory leaks.
+		Удаляет объект из памяти. <br />
+		Не забудьте вызвать этот метод при удалении геометрии, потому что это может вызвать утечку памяти.
 		</p>
 
 		<h3>[method:Geometry fromBufferGeometry]( [param:BufferGeometry geometry] )</h3>
-		<p>Convert a [page:BufferGeometry] to a Geometry. <br />
-		When converting from BufferGeometry to Geometry, all vertices are preserved, so duplicated vertices may appear.
-		Use [page:Geometry.mergeVertices] to remove them.</p>
+		<p>Конвертировать [page:BufferGeometry] в Geometry. <br />
+		При конвертации из BufferGeometry в Geometry,все вершины сохранены, поэтому могут появиться дублированные вершины.
+		ИСпользуйте [page:Geometry.mergeVertices] для их удаления.</p>
 
 		<h3>[method:Geometry lookAt] ( [param:Vector3 vector] )</h3>
 		<p>
-		vector - A world vector to look at.<br /><br />
+		vector - Мировой вектор, чтобы смотреть на.<br /><br />
 
-		Rotates the geometry to face point in space. This is typically done as a one time operation but not during the render loop.<br>
-		Use [page:Object3D.lookAt] for typical real-time mesh usage.
+		Поворачивает геометрию в границу точки в пространстве. Обычно это делается как разовая операция, но не во время цикла рендеринга..<br>
+		ИСпользуйте [page:Object3D.lookAt] для типичного использования меша в реальном времени.
 		</p>
 
 		<h3>[method:null merge]( [param:Geometry geometry], [param:Matrix4 matrix], [param:Integer materialIndexOffset] )</h3>
-		<p>Merge two geometries or geometry and geometry from object (using object's transform)</p>
+		<p>Слияние двух geometries или geometry и geometry из объекта (используя трансформации объекта)</p>
 
 		<h3>[method:null mergeMesh]( [param:Mesh mesh] )</h3>
-		<p>Merge the mesh's geometry with this, also applying the mesh's transform.</p>
+		<p>Объединить геометрию меша с этим, также применяя трансформации сетки.</p>
 
 
 		<h3>[method:null mergeVertices]()</h3>
 		<p>
-		Checks for duplicate vertices using hashmap.<br />
-		Duplicated vertices are removed and faces' vertices are updated.
+		Проверяет наличие дублирующих вершин hashmap.<br />
+		Дублированные вершины удаляются, а вершины граней обновляются.
 		</p>
 
 		<h3>[method:null normalize]()</h3>
 		<p>
-		Normalize the geometry. <br />
-		Make the geometry centered and have a bounding sphere of radius *1.0*.
+		Нормализует geometry. <br />
+		Делает геометрию центрированной и придает bounding sphere с радиусом *1.0*.
 		</p>
 
 		<h3>[method:Geometry rotateX] ( [param:Float radians] )</h3>
 		<p>
-		Rotate the geometry about the X axis. This is typically done as a one time operation but not during the render loop.<br>
-		Use [page:Object3D.rotation] for typical real-time mesh rotation.
+		Поверните геометрию вокруг X оси. Обычно это делается как разовая операция, но не во время цикла рендеринга.<br>
+		Use [page:Object3D.rotation] для типичного вращения меша в реальном времени.
 		</p>
 
 		<h3>[method:Geometry rotateY] ( [param:Float radians] )</h3>
 		<p>
-		Rotate the geometry about the Y axis. This is typically done as a one time operation but not during the render loop.<br>
-    	        Use [page:Object3D.rotation] for typical real-time mesh rotation.
+		Повернуть геометрию вокруг оси Y. Обычно это делается как разовая операция, но не во время цикла рендеринга.<br>
+    	        Use [page:Object3D.rotation] для типичного вращения меша в реальном времени.
 		</p>
 
 		<h3>[method:Geometry rotateZ] ( [param:Float radians] )</h3>
 		<p>
-		Rotate the geometry about the Z axis. This is typically done as a one time operation but not during the render loop.<br>
-	        Use [page:Object3D.rotation] for typical real-time mesh rotation.
+		Повернуть геометрию вокруг оси Z. Обычно это делается как разовая операция, но не во время цикла рендеринга.<br>
+	        Use [page:Object3D.rotation] для типичного вращения меша в реальном времени.
 		</p>
 
 		<h3>[method:Geometry setFromPoints] ( [param:Array points] )</h3>
-		<p>Sets the vertices for this Geometry from an array of points.</p>
+		<p>Устанавливает вершины для этого Geometry из массива точек.</p>
 
 		<h3>[method:null sortFacesByMaterialIndex] (  )</h3>
 		<p>
-		Sorts the faces array according to material index. For complex geometries with several materials,
-		this can result in reduced draw calls and improved performance.
+		Сортирует массив граней по индексу материала. Для сложных геометрий с несколькими материалами это может привести к уменьшению количества вызовов и повышению производительности.
 		</p>
 
 		<h3>[method:Geometry scale] ( [param:Float x], [param:Float y], [param:Float z] )</h3>
 		<p>
-		Scale the geometry data. This is typically done as a one time operation but not during the render loop.<br>
-		Use [page:Object3D.scale] for typical real-time mesh scaling.
+		Масштабирует данные геометрии. Обычно это делается как разовая операция, но не во время цикла рендеринга.<br>
+		Use [page:Object3D.scale] для масштабирования типичного каркаса в реальном времени.
 		</p>
 
 		<h3>[method:Object toJSON] ( )</h3>
-		<p>Convert the geometry to JSON format.<br />
-		Convert the geometry to three.js [link:https://github.com/mrdoob/three.js/wiki/JSON-Object-Scene-format-4 JSON Object/Scene format].
+		<p>Преобразовать геометрию в JSON формат.<br />
+		Преобразовать геометрию в three.js [link:https://github.com/mrdoob/three.js/wiki/JSON-Object-Scene-format-4 JSON Object/Scene format].
 		</p>
 
 		<h3>[method:Geometry translate] ( [param:Float x], [param:Float y], [param:Float z] )</h3>
 		<p>
-		Translate the geometry. This is typically done as a one time operation but not during the render loop.<br>
-    	        Use [page:Object3D.position] for typical real-time mesh translation.
+		Translate the geometry. Обычно это делается как разовая операция, но не во время цикла рендеринга.<br>
+    	        Use [page:Object3D.position] для типичной сетки в реальном времени translation.
 		</p>
 
 
