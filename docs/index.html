@@ -31,6 +31,7 @@
 					<div id="exitSearchButton"></div>
 					<select id="language">
 						<option value="en">en</option>
+						<option value="ru">ru</option>
 						<option value="zh">zh</option>
 					</select>
 				</div>
@@ -150,11 +151,11 @@
 
 			};
 
-			// Activate content and title change on browser navigation
+			// Активировать содержимое и изменение названия в браузере
 
 			window.onpopstate = createNewIframe;
 
-			// Create the navigation panel and configure the iframe
+			// Создайте панель навигации и настройте iframe
 
 			createNavigation();
 			createNewIframe();
