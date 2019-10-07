@@ -10,7 +10,7 @@ three.js
 
 #### JavaScript 3D library ####
 
-The aim of the project is to create an easy to use, lightweight, 3D library with a default WebGL renderer. The library also provides Canvas 2D, SVG and CSS3D renderers in the examples.
+Целью проекта является создание простой в использовании, легковесной, 3D библиотеки с WebGL рендером. Библиотека также предоставляет Canvas 2D, SVG и CSS3D renderers в примерах.
 
 [Examples](http://threejs.org/examples/) &mdash;
 [Documentation](http://threejs.org/docs/) &mdash;
@@ -23,14 +23,14 @@ The aim of the project is to create an easy to use, lightweight, 3D library with
 
 ### Usage ###
 
-Download the [minified library](http://threejs.org/build/three.min.js) and include it in your HTML, or install and import it as a [module](http://threejs.org/docs/#manual/introduction/Import-via-modules),
+Загрузите [минимизированную библиотеку](http://threejs.org/build/three.min.js) и включите её в свой HTML, или установите и импортируйте его как [модуль](http://threejs.org/docs/#manual/introduction/Import-via-modules),
 Alternatively, see [how to build the library yourself](https://github.com/mrdoob/three.js/wiki/Build-instructions).
 
 ```html
 <script src="js/three.min.js"></script>
 ```
 
-This code creates a scene, a camera, and a geometric cube, and it adds the cube to the scene. It then creates a `WebGL` renderer for the scene and camera, and it adds that viewport to the `document.body` element. Finally, it animates the cube within the scene for the camera.
+Этот код создает сцену, камеру и геометрический куб и добавляет куб к сцене. Затем он создает средство визуализации `WebGL` для сцены и камеры и добавляет этот видовой экран к элементу` document.body`. Наконец, он оживляет куб в сцене для камеры.
 
 ```javascript
 var camera, scene, renderer;

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <script src="list.js"></script>
+    <script src="page.js"></script>
+    <link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+
+<body>
+    <h1>[name]</h1>
+
+    <p class="desc">
+        Orbit controls позволяют камере вращаться вокруг цели.<br> Чтобы использовать это, как со всеми файлами в папке /examples , вам придется включить файл отдельно в вашем HTML.
+
+    </p>
+
+
+    <h2>Пример</h2>
+
+    <p>[example:misc_controls_orbit misc / controls / orbit ]</p>
+
+    <code>
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+
+var scene = new THREE.Scene();
+
+var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+
+var controls = new THREE.OrbitControls( camera, renderer.domElement );
+
+//controls.update() must be called after any manual changes to the camera's transform
+camera.position.set( 0, 20, 100 );
+controls.update();
+
+function animate() {
+
+	requestAnimationFrame( animate );
+
+	// required if controls.enableDamping or controls.autoRotate are set to true
+	controls.update();
+
+	renderer.render( scene, camera );
+
+}
+		</code>
+
+    <h2>Конструктор</h2>
+
+    <h3>[name]( [param:Camera object], [param:HTMLDOMElement domElement] )</h3>
+    <p>
+        [page:Camera object]: (required) Камера для управления. Камера не должна быть дочерней по отношению к другому объекту, если только этот объект не является самой сценой.<br><br> [page:HTMLDOMElement domElement]: (optional) Элемент HTML, используемый
+        для слушателей событий. По умолчанию это весь документ, однако если вы хотите, чтобы элементы управления работали только с определенным элементом (например, с канвой), вы можете указать это здесь.
+    </p>
+
+
+    <h2>Свойства</h2>
+
+    <h3>[property:Boolean autoRotate]</h3>
+    <p>
+        Установите в true, чтобы автоматически вращаться вокруг цели.<br> Обратите внимание, что если это включено, вы должны вызвать [page:.update] () в вашем цикле анимации.
+    </p>
+
+    <h3>[property:Float autoRotateSpeed]</h3>
+    <p>
+        Как быстро вращаться вокруг цели, если [property:Boolean autoRotate] в true. По умолчанию 2.0, что соответствует 30 секунд за оборот при 60fps.<br> Обратите внимание, что если [property:Boolean autoRotate] активирован, вы должны вызвать [page:.update]
+        () в вашем цикле анимации.
+    </p>
+
+    <h3>
+        [property:Float dampingFactor]</h3>
+    <p>
+        Инерция демпфирования используется, если [property:Boolean enableDamping] установлен в true.<br> Обратите внимание, что для того, чтобы это работало, вы должны вызвать [page:.update] () в вашем цикле анимации.
+    </p>
+
+    <h3>[property:HTMLDOMElement domElement]</h3>
+    <p>
+        HTMLDOMElement используется для прослушивания мыши / touch events. This must be passed in the constructor; changing it here will not set up new event listeners. По умолчанию это the whole document.
+    </p>
+
+    <h3>[property:Boolean enabled]</h3>
+    <p>
+        Whether or not the controls are enabled.
+    </p>
+
+    <h3>[property:Boolean enableDamping]</h3>
+    <p>
+        Установите значение true, чтобы включить демпфирование (инерцию), которое можно использовать для придания ощущения веса элементам управления. По умолчанию это false.<br> Обратите внимание, что если это включено, вы должны вызывать [page:.update]
+        () в вашем цикле анимации.
+    </p>
+
+    <h3>[property:Boolean enableKeys]</h3>
+    <p>
+        Включить или отключить использование клавиш управления.
+    </p>
+
+    <h3>[property:Boolean enablePan]</h3>
+    <p>
+        Eвключить или отключить панорамирование камеры. По умолчанию true.
+    </p>
+
+    <h3>[property:Boolean enableRotate]</h3>
+    <p>
+        Включить или отключить горизонтальное и вертикальное вращение камеры. По умолчанию это true.<br> Обратите внимание, что можно отключить одну ось, задав минимальные и максимальные значения [page:.minPolarAngle polar angle] или [page:.minAzimuthAngle
+        azimuth angle] к тому же значению, что приведет к тому, что вертикальное или горизонтальное вращение будет зафиксировано на этом значении.
+    </p>
+
+    <h3>[property:Boolean enableZoom]</h3>
+    <p>
+        Enable или disable zooming (dollying) камеры.
+    </p>
+
+    <h3>[property:Float keyPanSpeed]</h3>
+    <p>
+        Как быстро панорамировать камеру при использовании клавиатуры. По умолчанию 7.0 пикселей на нажатие клавиши.
+    </p>
+
+    <h3>[property:Object keys]</h3>
+    <p>
+        Этот объект содержит ссылки на коды клавиш для управления панорамированием камеры. По умолчанию это 4 клавиши со стрелками.
+        <code>
+controls.keys = {
+	LEFT: 37, //left arrow
+	UP: 38, // up arrow
+	RIGHT: 39, // right arrow
+	BOTTOM: 40 // down arrow
+}
+			 </code> See [link:https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode this page] for a full list of keycodes.
+    </p>
+
+    <h3>[property:Float maxAzimuthAngle]</h3>
+    <p>
+        Как далеко вы можете вращаться по горизонтали, верхний предел. Диапазон между - Math.PI до Math.PI ( или Infinity без ограничений ) и по умолчанию Infinity;
+    </p>
+
+    <h3>[property:Float maxDistance]</h3>
+    <p>
+        Как далеко вы можете наехать камерой ( [page:PerspectiveCamera] only ). По умолчанию это Infinity.
+    </p>
+
+    <h3>[property:Float maxPolarAngle]</h3>
+    <p>
+        Как далеко вы можете двигаться по вертикали, верхний предел. Range is 0 to Math.PI radians, and по умолчанию Math.PI.
+    </p>
+
+    <h3>[property:Float maxZoom]</h3>
+    <p>
+        Как далеко вы можете отъехать камерой ( [page:OrthographicCamera] only ). По умолчанию это Infinity.
+    </p>
+
+    <h3>[property:Float minAzimuthAngle]</h3>
+    <p>
+        Как далеко вы можете вращаться по горизонтали, нижний предел. Range is - Math.PI to Math.PI ( or - Infinity for no limit ) and default is - Infinity;
+    </p>
+
+    <h3>[property:Float minDistance]</h3>
+    <p>
+        Как далеко вы можете наезжать в ( [page:PerspectiveCamera] only ). По умолчанию это 0.
+    </p>
+
+    <h3>[property:Float minPolarAngle]</h3>
+    <p>
+        Как далеко вы можете двигаться по вертикали, нижний предел. Range is 0 to Math.PI radians, and по умолчанию 0.
+    </p>
+
+    <h3>[property:Float minZoom]</h3>
+    <p>
+        Как далеко вы можете увеличить ( [page:OrthographicCamera] only ). По умолчанию это 0.
+    </p>
+
+    <h3>
+        [property:Object mouseButtons]</h3>
+    <p>
+        Этот объект содержит ссылки на действия мыши, используемые элементами управления.
+        <code>
+controls.mouseButtons = {
+	LEFT: THREE.MOUSE.ROTATE,
+	MIDDLE: THREE.MOUSE.DOLLY,
+	RIGHT: THREE.MOUSE.PAN
+}
+			</code>
+    </p>
+
+    <h3>[property:Camera object]</h3>
+    <p>
+        Управляемая камера.
+    </p>
+
+    <h3>[property:Float panSpeed]</h3>
+    <p>
+        Скорость панорамирования. По умолчанию это 1.
+    </p>
+
+    <h3>[property:Vector3 position0]</h3>
+    <p>
+        Используется внутри [method:saveState] и [method:reset] методов.
+    </p>
+
+    <h3>[property:Float rotateSpeed]</h3>
+    <p>
+        Скорость вращения. По умолчанию это 1.
+    </p>
+
+    <h3>[property:Boolean screenSpacePanning]</h3>
+    <p>
+        Defines how the camera's position is translated when panning. If true, the camera pans in screen space. Otherwise, the camera pans in the plane orthogonal to the camera's up direction. По умолчанию это false.
+    </p>
+
+    <h3>[property:Vector3 target0]</h3>
+    <p>
+        Used internally by the [method:saveState] and [method:reset] methods.
+    </p>
+
+    <h3>[property:Vector3 target]</h3>
+    <p>
+        Точка фокусировки органов управления, вокруг которой [page:.object] крутится камера. Он может быть обновлен вручную в любой момент, чтобы изменить фокус органов управления.
+    </p>
+
+    <h3>[property:Object touches]</h3>
+    <p>
+        Этот объект содержит ссылки на действия касания, используемые элементами управления.
+        <code>
+controls.touches = {
+	ONE: THREE.TOUCH.ROTATE,
+	TWO: THREE.TOUCH.DOLLY_PAN
+}
+			</code>
+    </p>
+
+    <h3>[property:Float zoom0]</h3>
+    <p>
+        Used internally by the [method:saveState] and [method:reset] methods.
+    </p>
+
+    <h3>[property:Float zoomSpeed]</h3>
+    <p>
+        Speed of zooming / dollying. По умолчанию это 1.
+    </p>
+
+
+
+    <h2>Methods</h2>
+
+    <h3>[method:null dispose] ()</h3>
+    <p>
+        Remove all the event listeners.
+    </p>
+
+    <h3>[method:radians getAzimuthalAngle] ()</h3>
+    <p>
+        Get the current horizontal rotation, in radians.
+    </p>
+
+    <h3>[method:radians getPolarAngle] ()</h3>
+    <p>
+        Get the current vertical rotation, in radians.
+    </p>
+
+    <h3>[method:null reset] ()</h3>
+    <p>
+        Сбросьте элементы управления в их состояние с момента последнего [page:.saveState] вызова, или начальное состояние.
+    </p>
+
+    <h3>[method:null saveState] ()</h3>
+    <p>
+        Сохранить текущее состояние элементов управления. Это может быть позже восстановлено с [page:.reset].
+    </p>
+
+    <h3>[method:Boolean update] ()</h3>
+    <p>
+        Update the controls. Must be called after any manual changes to the camera's transform, or in the update loop if [page:.autoRotate] or [page:.enableDamping] are set.
+    </p>
+
+    <h2>Source</h2>
+
+    <p>
+        [link:https://github.com/mrdoob/three.js/blob/master/examples/js/controls/OrbitControls.js examples/js/controls/OrbitControls.js]
+    </p>
+</body>
+
+</html>
